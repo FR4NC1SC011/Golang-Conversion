@@ -22,28 +22,28 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// mtokCmd represents the mtok command
-var mtokCmd = &cobra.Command{
-	Use:   "mtok",
-	Short: "Miles to Kilometers",
+// itocmCmd represents the itocm command
+var itocmCmd = &cobra.Command{
+	Use:   "itocm",
+	Short: "Inches to Centimeters",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Miles: " + args[0])
-		miles, _ := strconv.ParseFloat(args[0], 64)
-		kilometers := miles * 1.609
-		fmt.Println("Kilometers: ", kilometers)
+		fmt.Println("Inches: " + args[0])
+		inches, _ := strconv.ParseFloat(args[0], 64)
+		cm := inches * 2.54
+		fmt.Println("Centimeters: ", cm)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(mtokCmd)
+	rootCmd.AddCommand(itocmCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// mtokCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// itocmCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// mtokCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// itocmCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

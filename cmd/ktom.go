@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/spf13/cobra"
 )
@@ -24,15 +25,12 @@ import (
 // ktomCmd represents the ktom command
 var ktomCmd = &cobra.Command{
 	Use:   "ktom",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Kilometers to Miles",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("ktom called")
+		fmt.Println("Kilometers: " + args[0])
+		kil, _ := strconv.ParseFloat(args[0], 64)
+		miles := kil / 1.609
+		fmt.Println("Miles: ", miles)
 	},
 }
 
