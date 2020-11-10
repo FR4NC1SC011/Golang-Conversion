@@ -25,7 +25,7 @@ import (
 // cmtoiCmd represents the cmtoi command
 var cmtoiCmd = &cobra.Command{
 	Use:   "cmtoi",
-	Short: "A brief description of your command",
+	Short: "Centimeters to inches",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Centimeters: " + args[0])
 		cm, _ := strconv.ParseFloat(args[0], 64)
