@@ -29,7 +29,7 @@ var cmtofCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Centimeters: " + args[0])
 		centimeters, _ := strconv.ParseFloat(args[0], 64)
-		feet := centimeters * 30.48
+		feet := centimeters / 30.48
 		fmt.Println("Feet: ", feet)
 	},
 }
